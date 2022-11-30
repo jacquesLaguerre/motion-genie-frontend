@@ -1,0 +1,29 @@
+.Welcome{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.Button{
+  display: flex;
+  justify-content: center;
+ 
+  width: 120px;
+}
+
+.ant-btn.ant-btn-lg {
+  border-radius: 10%;
+}
+
+.footer{
+  display: flex;
+  position: absolute;
+  justify-content: center;
+bottom: 0
+}
+
+.titlemain{
+  display: flex;
+  justify-content: center; 
+}
