@@ -10,7 +10,7 @@ export default function GetStarted() {
     <div style={{  display: "flex",
       justifyContent: "center", }}>
      
-          <Button type="primary" size={size} className="Button" href="http://localhost:3002/main" >
+          <Button type="primary" size={size} className="Button" href="localhost:5002/main" >
            Get Started
           </Button>
        

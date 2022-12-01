@@ -3,7 +3,7 @@ import { Button, Form, Input } from "antd";
 
 export default function ReviewForm() {
   const handleSubmit = (newReview) => {
-    fetch("http://localhost:3030/review", {
+    fetch("https://motion-genie-api.web.app/review", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -11,7 +11,7 @@ export default function ReviewForm() {
       body: JSON.stringify(newReview),
     })
       .then()
-      .catch(console.error);
+      .catch();
   };
 
 

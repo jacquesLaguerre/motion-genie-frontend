@@ -7,12 +7,16 @@ import Exercise2 from "./pages/Exercise2";
 import Exercise3 from "./pages/Exercise3";
 import MotionGenie from "./pages/MotionGenie";
 import ReviewForm from "./pages/ReviewForm";
+
+//import ReviewPage from "./pages/ReviewForm";
 import "./assets/App.css";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
+     
+   
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/acl" element={<Exercise1 />} />
