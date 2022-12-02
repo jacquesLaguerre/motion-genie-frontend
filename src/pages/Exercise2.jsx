@@ -5,7 +5,7 @@ export default function Exercise2 () {
     <>
     <h1>Meniscus Tear</h1>
     <Button type="link" htmlType="button" >
-    review
+     add review
      </Button>
     </>
   )

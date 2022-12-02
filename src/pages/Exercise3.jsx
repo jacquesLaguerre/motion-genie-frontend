@@ -1,15 +1,14 @@
-// import { Button, Form } from "antd"
-// const [form] = Form.useForm();
+import { Button } from "antd"
 
 export default function Exercise3 (){
   return ( 
   <>
-   <h1>Lateral Ankle Sprain</h1>
-<button>Review</button>
-
-   {/* <Button type="link" htmlType="button" >
-    Review
-     </Button> */}
+  <>
+    <h1>Meniscus Tear</h1>
+    <Button type="link" htmlType="button" >
+     add review
+     </Button>
+    </>
   </>
   )
 }

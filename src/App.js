@@ -7,6 +7,8 @@ import Exercise2 from "./pages/Exercise2";
 import Exercise3 from "./pages/Exercise3";
 import MotionGenie from "./pages/MotionGenie";
 import ReviewForm from "./pages/ReviewForm";
+import ReviewPage from "./pages/ReviewPage";
+
 
 //import ReviewPage from "./pages/ReviewForm";
 import "./assets/App.css";
@@ -24,6 +26,7 @@ function App() {
         <Route path="/ankle" element={<Exercise3 />} />
         <Route path="/main" element={<MotionGenie />} />
         <Route path="/review/add" element={<ReviewForm />} />
+        <Route path="/review" element={<ReviewPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

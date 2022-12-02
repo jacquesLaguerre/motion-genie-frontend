@@ -1,9 +1,11 @@
 import { useEffect } from "react";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input } from "antd"; 
+
 
 export default function ReviewForm() {
+  // let navigate = useNavigate()
   const handleSubmit = (newReview) => {
-    fetch("https://motion-genie-api.web.app/review", {
+    fetch("http://localhost:4050/review", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,10 +47,13 @@ export default function ReviewForm() {
       </Form.Item>
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
+        
+        <Button type="primary" htmlType="submit" >
           Submit
         </Button>
+      
       </Form.Item>
     </Form>
   );
 }
+ 
