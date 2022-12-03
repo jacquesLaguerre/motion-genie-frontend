@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Carousel } from "antd";
+import { Carousel } from "antd"
 import React from "react";
 
 const contentStyle = {

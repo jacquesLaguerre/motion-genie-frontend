@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import Exercise1 from "./pages/Exercise1";
-import Exercise2 from "./pages/Exercise2";
-import Exercise3 from "./pages/Exercise3";
+import ACL from "./pages/ACL";
+import Meniscus from "./pages/Meniscus";
+import Ankle from "./pages/Ankle";
 import MotionGenie from "./pages/MotionGenie";
 import ReviewForm from "./pages/ReviewForm";
 import ReviewPage from "./pages/ReviewPage";
@@ -21,9 +21,9 @@ function App() {
    
       <Routes>
         <Route path="/home" element={<Home />} />
-        <Route path="/acl" element={<Exercise1 />} />
-        <Route path="/meniscus" element={<Exercise2 />} />
-        <Route path="/ankle" element={<Exercise3 />} />
+        <Route path="/acl" element={<ACL />} />
+        <Route path="/meniscus" element={<Meniscus />} />
+        <Route path="/ankle" element={<Ankle />} />
         <Route path="/main" element={<MotionGenie />} />
         <Route path="/review/add" element={<ReviewForm />} />
         <Route path="/review" element={<ReviewPage />} />

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Button, Form, Input } from "antd"; 
-
+import { useNavigate } from "react-router-dom";
 
 export default function ReviewForm() {
-  // let navigate = useNavigate()
+  let navigate = useNavigate()
   const handleSubmit = (newReview) => {
     fetch("http://localhost:4050/review", {
       method: "POST",
@@ -12,7 +12,7 @@ export default function ReviewForm() {
       },
       body: JSON.stringify(newReview),
     })
-      .then()
+      .then(()=> navigate('/review'))
       .catch();
   };
 
@@ -48,7 +48,7 @@ export default function ReviewForm() {
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         
-        <Button type="primary" htmlType="submit" >
+        <Button type="primary" htmlType="submit" onClick={ReviewForm}>
           Submit
         </Button>
       
