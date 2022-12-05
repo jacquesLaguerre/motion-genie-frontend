@@ -8,9 +8,7 @@ export default function Exercise1() {
     fetch("http://localhost:4050/exercise")
       .then((res) => res.json())
       .then((data) => {
-        const acl = data.filter(
-          (exercise) => exercise.Injury == "ACL"
-        );
+        const acl = data.filter((exercise) => exercise.Injury == "ACL");
         console.log(acl);
         setExercises(acl);
       })
@@ -27,7 +25,25 @@ export default function Exercise1() {
             <iframe
               width="500"
               height="315"
-              src={exercise.Video}
+              src={exercise.Video1}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+            <iframe
+              width="500"
+              height="315"
+              src={exercise.Video2}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+            <iframe
+              width="500"
+              height="315"
+              src={exercise.Video3}
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

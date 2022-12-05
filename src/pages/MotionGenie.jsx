@@ -23,15 +23,15 @@ return(
    <br />
 
 
-<Link to={'/meniscus'}> 
+<Link to={'/hamstring'}> 
     <Card
   hoverable
   style={{
     width: 240,
   }}
-  cover={<img alt="example" src="https://yorkshirekneeclinic.com/wp-content/uploads/2020/08/Meniscal-Cartilage-Knee-Injury-sports-injuries-Yorkshire-Knee-Clinic.jpg" />}
+  cover={<img alt="example" src="https://media.istockphoto.com/id/495100086/video/semitendinosus-leg-muscles-anatomy-anaimation.jpg?s=640x640&k=20&c=0EQzSw8R-za-ySbYZjcS1_y4lPzJ4WHaRfKFQk9nqOw=" />}
   >
-    <Meta title="Meniscus Tear" description="Meniscus Tear " />
+    <Meta title="Hamstring Strain" description="Hamstring Strain" />
   </Card>
     </Link>
 
