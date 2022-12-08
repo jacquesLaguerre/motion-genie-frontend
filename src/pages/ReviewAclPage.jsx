@@ -10,15 +10,15 @@ const contentStyle = {
   background: "#364d79",
 };
 
-export default function ReviewPage() {
-  const [reviews, setReviews] = useState();
+export default function ReviewAclPage() {
+  const [reviewAcl, setReviewAcl] = useState();
 
   useEffect(() => {
-    fetch(//"http://localhost:4050/review"
-    "https://motion-genie-api.web.app/review"
+    fetch("http://localhost:4050/reviewAcl"
+    //"https://motion-genie-api.web.app/reviewAcl"
     )
       .then((res) => res.json())
-      .then((data) => setReviews(data))
+      .then((data) => setReviewAcl(data))
       .catch((err) => console.error(err));
   }, []);
 
@@ -26,11 +26,11 @@ export default function ReviewPage() {
     return (
       <>
         <Carousel  autoplay autoplaySpeed={2000}>
-          {reviews &&
-           [ ...reviews].reverse().map((review) => (
-              <div key={review._id}>
+          {reviewAcl &&
+           [ ...reviewAcl].reverse().map((reviewAcl) => (
+              <div key={reviewAcl._id}>
                 <h3 style={contentStyle}>
-                  {review.Name}: {review.review}
+                  {reviewAcl.Name}: {reviewAcl.review}
                 </h3>
               </div>
             ))}
@@ -40,7 +40,7 @@ export default function ReviewPage() {
   };
   return (
     <>
-      <h1>Reviews</h1>
+      <h1>ACl Exercise Reviews</h1>
       <Reviews />
     </>
   );

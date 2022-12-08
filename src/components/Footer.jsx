@@ -1,8 +1,8 @@
 export default function Footer () {
 return(
-  <div style={{display: 'flex', justifyContent: 'center'}}>
+  <div className="footer">
 
-  <footer className="footer"><small>Copyrights &copy; 2022 | all rights reserved</small></footer>
+  <footer className="footer"><small>Jacques Laguerre &copy; 2022 | all rights reserved</small></footer>
   </div>
   )
 }

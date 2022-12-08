@@ -1,12 +1,11 @@
-
 import { Button, Form, Input } from "antd"; 
 import { useNavigate } from "react-router-dom";
 
-export default function ReviewForm() {
+export default function ReviewAclForm() {
   let navigate = useNavigate()
   const handleSubmit = (newReview) => {
-    fetch("http://localhost:4050/review",
-    // "https://motion-genie-api.web.app/review",
+    fetch("http://localhost:4050/reviewAcl",
+    // "https://motion-genie-api.web.app/reviewACl",
      {
       method: "POST",
       headers: {
@@ -14,7 +13,7 @@ export default function ReviewForm() {
       },
       body: JSON.stringify(newReview),
     })
-      .then(()=> navigate('/review'))
+      .then(()=> navigate('/review-acl'))
       .catch(console.error);
   };
 

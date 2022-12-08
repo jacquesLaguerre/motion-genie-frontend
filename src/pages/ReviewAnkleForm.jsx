@@ -1,11 +1,10 @@
-
 import { Button, Form, Input } from "antd"; 
 import { useNavigate } from "react-router-dom";
 
-export default function ReviewForm() {
+export default function ReviewAnkleForm() {
   let navigate = useNavigate()
   const handleSubmit = (newReview) => {
-    fetch("http://localhost:4050/review",
+    fetch("http://localhost:4050/reviewAnkle",
     // "https://motion-genie-api.web.app/review",
      {
       method: "POST",
@@ -14,7 +13,7 @@ export default function ReviewForm() {
       },
       body: JSON.stringify(newReview),
     })
-      .then(()=> navigate('/review'))
+      .then(()=> navigate('/review-ankle'))
       .catch(console.error);
   };
 
