@@ -9,8 +9,8 @@ export default function Ankle() {
  
   useEffect(() => {
     fetch(
-      "http://localhost:4050/exercise"
-      //"https://motion-genie-api.web.app/exercise"
+      // "http://localhost:4050/exercise"
+      "https://motion-genie-api.web.app/exercise"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -27,8 +27,8 @@ export default function Ankle() {
 
   const handleChange = (e, exerciseId, choice) => {
 
-    fetch (`http://localhost:4050/exercise/${exerciseId}`,
-    // `https://motion-genie-api.web.app/exercise/${exerciseId}`,
+    fetch ( //`http://localhost:4050/exercise/${exerciseId}`,
+    `https://motion-genie-api.web.app/exercise/${exerciseId}`,
     {
       method: "PATCH",
       headers: {
@@ -52,10 +52,10 @@ export default function Ankle() {
 
   return (
     <>
-      <h1>Ankle Fracture</h1>
+      <h1 className="ankle-fracture">Ankle Fracture Exercises</h1>
 
       <>
-        <Card>
+        <Card className="exercise-page">
             <iframe
               width="500"
               height="315"
@@ -76,9 +76,9 @@ export default function Ankle() {
         
 
         </Card>
-        <br />
+   
 
-        <Card>
+        <Card className="exercise-page">
           <iframe
             width="500"
             height="315"
@@ -96,12 +96,14 @@ export default function Ankle() {
                <Checkbox checked={exerciseFour?.watched} onChange={(e) => handleChange(e, exerciseFour._id, 4)}  />
             Mark when complete
         </Card>
+<Card className="add-review">
 
         <Link to="/review/add/ankle">
         <Button type="primary" htmlType="button">
           Add review
         </Button>
       </Link>
+</Card>
       </>
 
      

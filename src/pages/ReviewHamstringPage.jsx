@@ -4,18 +4,18 @@ import React from "react";
 
 const contentStyle = {
   height: "160px",
-  color: "#fff",
+  color: "#000000",
   lineHeight: "160px",
   textAlign: "center",
-  background: "#364d79",
+  background: "#ffffff",
 };
 
 export default function ReviewHamstringPage() {
   const [reviewHamstring, setReviewHamstring] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:4050/reviewHamstring"
-    //"https://motion-genie-api.web.app/reviewHamstring"
+    fetch(//"http://localhost:4050/reviewHamstring"
+    "https://motion-genie-api.web.app/reviewHamstring"
     )
       .then((res) => res.json())
       .then((data) => setReviewHamstring(data))
@@ -40,7 +40,7 @@ export default function ReviewHamstringPage() {
   };
   return (
     <>
-      <h1> Hamstring program Reviews</h1>
+      <h1 className="exercise-review-page"> Hamstring program Reviews</h1>
       <Reviews />
     </>
   );

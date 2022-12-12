@@ -4,18 +4,18 @@ import React from "react";
 
 const contentStyle = {
   height: "160px",
-  color: "#fff",
+  color: "#000000",
   lineHeight: "160px",
   textAlign: "center",
-  background: "#364d79",
+  background: "#ffffff",
 };
 
 export default function ReviewAclPage() {
   const [reviewAcl, setReviewAcl] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:4050/reviewAcl"
-    //"https://motion-genie-api.web.app/reviewAcl"
+    fetch(//"http://localhost:4050/reviewAcl"
+    "https://motion-genie-api.web.app/reviewAcl"
     )
       .then((res) => res.json())
       .then((data) => setReviewAcl(data))
@@ -40,7 +40,7 @@ export default function ReviewAclPage() {
   };
   return (
     <>
-      <h1>ACl Exercise Reviews</h1>
+      <h1 className="exercise-review-page">Anterior Cruciate Ligament tear program Reviews</h1>
       <Reviews />
     </>
   );

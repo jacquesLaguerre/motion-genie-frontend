@@ -10,8 +10,8 @@ export default function Acl() {
 
   useEffect(() => {
     fetch(
-      "http://localhost:4050/exercise"
-      // "https://motion-genie-api.web.app/exercise"
+      // "http://localhost:4050/exercise"
+      "https://motion-genie-api.web.app/exercise"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -24,15 +24,17 @@ export default function Acl() {
       .catch((err) => console.error(err));
   }, []);
   const handleChange = (e, exerciseId, choice) => {
-    fetch(`http://localhost:4050/exercise/${exerciseId}`, 
-    // `https://motion-genie-api.web.app/exercise/${exerciseId}`,
-    {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ watched: e.target.checked }),
-    }).then(() => {
+    fetch(
+      // `http://localhost:4050/exercise/${exerciseId}`,
+      `https://motion-genie-api.web.app/exercise/${exerciseId}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ watched: e.target.checked }),
+      }
+    ).then(() => {
       if (choice === 1) {
         setExercisesUn({ ...exercisesUn, watched: e.target.checked });
       } else if (choice === 2) {
@@ -45,39 +47,30 @@ export default function Acl() {
 
   return (
     <>
-      <h1> ACL Exercises </h1>
+
+      <h1 className="exercise-review-page"> Anterior Cruciate Ligament Exercises </h1>
 
       <>
-        <Card>
-          <Checkbox
-            checked={exercisesUn?.watched}
-            onChange={(e) => handleChange(e, exercisesUn._id, 1)}
-          />
-          Mark when complete
+        <Card className="exercise-page">
           <iframe
             width="500"
             height="315"
-            src={
-              exercisesUn?.Video1
-                ? exercisesUn.Video1
-                : exercisesUn.Video2
-            }
+            src={exercisesUn?.Video1 ? exercisesUn.Video1 : exercisesUn.Video2}
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </Card>
-
-        <Card>
+          <br />
           <Checkbox
-            checked={
-              exercisesDeux?.watched
-              
-            }
-            onChange={(e) => handleChange(e, exercisesDeux._id, 2)}
+            checked={exercisesUn?.watched}
+            onChange={(e) => handleChange(e, exercisesUn._id, 1)}
           />
           Mark when complete
+         
+        </Card>
+
+        <Card className="exercise-page">
           <iframe
             width="500"
             height="315"
@@ -91,14 +84,15 @@ export default function Acl() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </Card>
-
-        <Card>
+          <br />
           <Checkbox
-            checked={exercisesTrois?.watched}
-            onChange={(e) => handleChange(e, exercisesTrois._id, 3)}
+            checked={exercisesDeux?.watched}
+            onChange={(e) => handleChange(e, exercisesDeux._id, 2)}
           />
           Mark when complete
+        </Card>
+
+        <Card className="exercise-page">
           <iframe
             width="500"
             height="315"
@@ -112,14 +106,22 @@ export default function Acl() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+          <br />
+          <Checkbox
+            checked={exercisesTrois?.watched}
+            onChange={(e) => handleChange(e, exercisesTrois._id, 3)}
+          />
+          Mark when complete
         </Card>
       </>
+<Card className="add-review">
 
-      <Link to="/review/add/acl">
-        <Button type="primary" htmlType="button">
+      <Link  style={{ textDecoration: "none" }} to="/review/add/acl">
+        <Button type="primary" htmlType="button" className="add-review-acl-button">
           Add review
         </Button>
       </Link>
+</Card>
     </>
   );
 }

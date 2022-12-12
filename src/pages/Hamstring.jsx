@@ -8,9 +8,9 @@ export default function Hamstring() {
   const [exercise3, setExercise3] = useState([]);
   useEffect(() => {
     fetch(
-      "http://localhost:4050/exercise"
+      // "http://localhost:4050/exercise"
 
-      //"https://motion-genie-api.web.app/exercise"
+      "https://motion-genie-api.web.app/exercise"
     )
       .then((res) => res.json())
       .then((data) => {
@@ -25,8 +25,8 @@ export default function Hamstring() {
       .catch((err) => console.error(err));
   }, []);
   const handleChange = (e, exerciseId, choice) => {
-    fetch(`http://localhost:4050/exercise/${exerciseId}`,
-    // `https://motion-genie-api.web.app/exercise/${exerciseId}`,
+    fetch(//`http://localhost:4050/exercise/${exerciseId}`,
+    `https://motion-genie-api.web.app/exercise/${exerciseId}`,
     {
       method: "PATCH",
       headers: {
@@ -46,16 +46,11 @@ export default function Hamstring() {
 
   return (
     <>
-      <h1>Hamstring Strain</h1>
-      {/* {exercise2.map((exercise) => { */}
+      <h1 className="hamstring-strain">Hamstring Strain</h1>
+    
 
       <>
-        <Card>
-          <Checkbox
-            checked={exercise1?.watched}
-            onChange={(e) => handleChange(e, exercise1._id, 1)}
-          />
-          Mark when complete
+        <Card className="exercise-page">
           <iframe
             width="500"
             height="315"
@@ -64,15 +59,16 @@ export default function Hamstring() {
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          ></iframe>
+            ></iframe>
+            <br />
+          <Checkbox
+            checked={exercise1?.watched}
+            onChange={(e) => handleChange(e, exercise1._id, 1)}
+            />
+            Mark when complete
         </Card>
 
-        <Card>
-          <Checkbox
-            checked={exercise2?.watched}
-            onChange={(e) => handleChange(e, exercise2._id, 2)}
-          />
-          Mark when complete
+        <Card className="exercise-page">
           <iframe
             width="500"
             height="315"
@@ -83,39 +79,48 @@ export default function Hamstring() {
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          ></iframe>
+            ></iframe>
+          <br />
+            <Checkbox
+              checked={exercise2?.watched}
+              onChange={(e) => handleChange(e, exercise2._id, 2)}
+              />
+              Mark when complete
         </Card>
 
-        <Card>
-          <Checkbox
-            checked={exercise3?.watched}
-            onChange={(e) => handleChange(e, exercise3._id, 3)}
-          />
-          Mark when complete
+        <Card className="exercise-page">
           <iframe
             width="500"
             height="315"
             src={
               exercise3?.VideoThree
-                ? exercise3.VideoThree
-                : exercise3.VideoThree
+              ? exercise3.VideoThree
+              : exercise3.VideoThree
             }
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          ></iframe>
+            ></iframe>
+            <br />
+            <Checkbox
+              checked={exercise3?.watched}
+              onChange={(e) => handleChange(e, exercise3._id, 3)}
+              />
+              Mark when complete
         </Card>
       </>
 
-      {/* })} */}
-      <br />
+    
+      
+<Card className="add-review">
 
       <Link to="/review/add/hamstring">
         <Button type="primary" htmlType="button">
           Add review
         </Button>
       </Link>
+</Card>ß
     </>
   );
 }

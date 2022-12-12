@@ -4,18 +4,18 @@ import React from "react";
 
 const contentStyle = {
   height: "160px",
-  color: "#fff",
+  color: "#000000",
   lineHeight: "160px",
   textAlign: "center",
-  background: "#364d79",
+  background: "#ffffff",
 };
 
 export default function ReviewAnklePage() {
   const [reviewAnkle, setReviewAnkle] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:4050/reviewAnkle"
-    //"https://motion-genie-api.web.app/reviewAnkle"
+    fetch(//"http://localhost:4050/reviewAnkle"
+    "https://motion-genie-api.web.app/reviewAnkle"
     )
       .then((res) => res.json())
       .then((data) => setReviewAnkle(data))
@@ -40,7 +40,7 @@ export default function ReviewAnklePage() {
   };
   return (
     <>
-      <h1>Ankle Reviews</h1>
+      <h1 className="exercise-review-page">Ankle Reviews</h1>
       <Reviews />
     </>
   );

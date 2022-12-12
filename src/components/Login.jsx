@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { initializeApp } from "firebase/app";
+import { Button } from "antd";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -45,38 +46,13 @@ export default function Login({ setUser }) {
   };
 
   return (
-    <>
+    <main className="mainLoginContainer">
+
       <div className="Login">
-        <h1>Login</h1>
-        <div>
-          <form onSubmit={handleLogin}>
-            <label htmlFor="email">
-              Email:
-              <input
-                type="email"
-                name="email"
-                placeholder="yourname@domain.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </label>
-            <br />
-            <label htmlFor="password">
-              Password:
-              <input
-                type="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </label>
-            <br />
-            <button type="submit">Log in</button>
-          </form>
-          <br />
-          <button onClick={handleGoogleLogin}>Sign in with Google </button>
+       <h1>Welcome to Motion Genie</h1>
+       <p className="text">A post injury application that guides you through the right steps for a fast and healthy recovery </p>
+          <Button type="primary"onClick={handleGoogleLogin}>Log in with Google </Button>
         </div>
-      </div>
-    </>
-  );
+    </main>
+        );
 }

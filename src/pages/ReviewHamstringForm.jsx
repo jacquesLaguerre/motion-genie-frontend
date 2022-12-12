@@ -1,11 +1,11 @@
-import { Button, Form, Input } from "antd"; 
+import { Button, Form, Input, Card } from "antd"; 
 import { useNavigate } from "react-router-dom";
 
 export default function ReviewHamstringForm() {
   let navigate = useNavigate()
   const handleSubmit = (newReview) => {
-    fetch("http://localhost:4050/reviewHamstring",
-    // "https://motion-genie-api.web.app/review",
+    fetch(//"http://localhost:4050/reviewHamstring",
+    "https://motion-genie-api.web.app/reviewHamstring",
      {
       method: "POST",
       headers: {
@@ -21,6 +21,8 @@ export default function ReviewHamstringForm() {
 
 
   return (
+    <Card className="review-forms">
+
     <Form
       name="basic"
       labelCol={{ span: 8 }}
@@ -28,12 +30,12 @@ export default function ReviewHamstringForm() {
       initialValues={{ remember: true }}
       onFinish={handleSubmit}
       autoComplete="off"
-    >
+      >
       <Form.Item
         label="Name"
         name="Name"
         rules={[{ required: true, message: "Please input your Name!" }]}
-      >
+        >
         <Input />
       </Form.Item>
 
@@ -41,7 +43,7 @@ export default function ReviewHamstringForm() {
         label="Review"
         name="review"
         rules={[{ required: true, message: "Please input your review!" }]}
-      >
+        >
         <Input.TextArea />
       </Form.Item>
 
@@ -53,6 +55,7 @@ export default function ReviewHamstringForm() {
       
       </Form.Item>
     </Form>
+        </Card>
   );
 }
  
