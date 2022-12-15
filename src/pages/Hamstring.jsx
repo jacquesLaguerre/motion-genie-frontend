@@ -120,7 +120,7 @@ export default function Hamstring() {
           Add review
         </Button>
       </Link>
-</Card>ß
+</Card>
     </>
   );
 }

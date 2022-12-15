@@ -38,6 +38,7 @@ function App() {
       {/* Don't want to display Header when in Landing Page AKA UserLogin */}
 
       <Routes>
+  
         <Route path="/" element={<UserLogin setUser={setUser} />} />
 
         <Route path="/home" element={<Home />} />
